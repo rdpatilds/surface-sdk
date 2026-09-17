@@ -1,0 +1,54 @@
+{
+  "version": 3,
+  "kill_switch": false,
+  "rules": [
+    {
+      "id": "assignment-submit",
+      "version": 1,
+      "enabled": true,
+      "url_pattern": "/courses/*/assignments/*",
+      "element_selector": "button.submit_assignment_link",
+      "content": "Ready? Click here to start and submit your assignment.",
+      "placement": "bottom",
+      "audience": {
+        "roles": [
+          "student"
+        ],
+        "course_code_prefix": "SAT"
+      },
+      "dismissible": true
+    },
+    {
+      "id": "modules-nav",
+      "version": 1,
+      "enabled": true,
+      "url_pattern": "/courses/*",
+      "element_selector": "#modules-link",
+      "content": "Modules is where your SAT-101 work lives, in order.",
+      "placement": "right",
+      "audience": {
+        "roles": [
+          "student"
+        ],
+        "course_code_prefix": "SAT"
+      },
+      "dismissible": true
+    },
+    {
+      "id": "performance-dashboard-nav",
+      "version": 1,
+      "enabled": true,
+      "url_pattern": "/courses/*",
+      "element_selector": "#context_external_tool_6-link",
+      "content": "Your Performance Dashboard shows your path and next steps.",
+      "placement": "right",
+      "audience": {
+        "roles": [
+          "student"
+        ],
+        "course_code_prefix": "SAT"
+      },
+      "dismissible": true
+    }
+  ]
+}

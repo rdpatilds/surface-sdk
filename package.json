@@ -1,0 +1,7 @@
+{
+  "name": "surface-sdk",
+  "private": true,
+  "version": "0.1.0",
+  "dependencies": { "@floating-ui/core": "1.7.3", "@floating-ui/dom": "1.8.0" },
+  "devDependencies": { "playwright": "1.49.1" }
+}
