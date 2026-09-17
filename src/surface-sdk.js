@@ -10,6 +10,10 @@
   var HOST_PREFIX = 'kaplan-surface-';
   var MISS_TIMEOUT_MS = 10000;
 
+  // Canvas sets ENV.current_user_id on every page for a signed-in user. Without one
+  // (the login page, error pages) there is no session to read rules for and nothing to render.
+  if (!(window.ENV && window.ENV.current_user_id)) return;
+
   var states = {};
   var dismissed = null;
   var coursesPromise = null;

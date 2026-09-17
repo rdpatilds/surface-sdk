@@ -125,7 +125,9 @@ cookie is the right source.
 
 ## What the SDK does at runtime
 
-It fetches the rules with `cache: 'no-store'` and stops if `kill_switch` is true. It reads
+It exits at once on any page without a signed-in user, which Canvas signals by leaving
+`ENV.current_user_id` unset, so the login and error pages make no requests. Otherwise it
+fetches the rules with `cache: 'no-store'` and stops if `kill_switch` is true. It reads
 `/api/v1/users/self/custom_data/surface?ns=kaplan` once to learn which ids the learner already
 dismissed, and treats the 400 Canvas returns before anything is stored as an empty map. It fetches
 the learner's active courses at most once per page load, and only if a rule that already passed the
